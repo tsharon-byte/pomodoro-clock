@@ -1,13 +1,70 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(
+            115deg,
+            rgba(58, 58, 158, 0.2),
+            rgba(136, 136, 206, 0.5)
+    ),
+    url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiAOpm3SgMtmZ-PvAW3LkHYl1wlpBM25TgEHge7O4AIRFA1htJ&s);
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  width: 99vw;
+  height: 98vh;
+    color: Orchid;
+    font-family: 'Righteous';
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: rgba(100, 100, 100, 0.5);
+    margin: auto 20vw auto 20vw;
+    position: relative;
+    width: 350px;
+    outline: 6px ridge silver;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.length-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.length-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 130px;
+    border: 4px double silver;
+    align-items: center;
+}
+
+.length {
+    display: flex;
+    flex-direction: row;
+}
+
+#session-length {
+    width: 40px;
+}
+
+#break-length {
+    width: 40px;
+}
+
+#clock {
+    width: 100px;
+    outline: 6px ridge silver;
+    margin: 10px;
+}
+
+#start_stop {
+    margin: 10px;
 }
