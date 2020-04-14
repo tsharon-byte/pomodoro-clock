@@ -39,9 +39,12 @@ class App extends React.Component {
         if (this.state.timerHasBeenStarted || this.state.breakLength === 1) {
             return;
         }
+        let breakLength = this.state.breakLength - 1;
+        let minutes = this.state.isSession ? this.state.sessionLength : breakLength
         this.setState({
-            breakLength: this.state.breakLength - 1,
-            seconds: 0
+            breakLength: breakLength,
+            seconds: 0,
+            minutes: minutes
         });
     }
 
@@ -49,9 +52,12 @@ class App extends React.Component {
         if (this.state.timerHasBeenStarted || this.state.breakLength === 60) {
             return;
         }
+        let breakLength = this.state.breakLength + 1;
+        let minutes = this.state.isSession ? this.state.sessionLength : breakLength;
         this.setState({
-            breakLength: this.state.breakLength + 1,
-            seconds: 0
+            breakLength: breakLength,
+            seconds: 0,
+            minutes: minutes
         });
     }
 
@@ -59,9 +65,12 @@ class App extends React.Component {
         if (this.state.timerHasBeenStarted || this.state.sessionLength === 1) {
             return;
         }
+        let sessionLength = this.state.sessionLength - 1;
+        let minutes = this.state.isSession ? sessionLength : this.state.breakLength;
         this.setState({
-            sessionLength: this.state.sessionLength - 1,
-            seconds: 0
+            sessionLength: sessionLength,
+            seconds: 0,
+            minutes: minutes
         });
     }
 
@@ -69,9 +78,12 @@ class App extends React.Component {
         if (this.state.timerHasBeenStarted || this.state.sessionLength === 60) {
             return;
         }
+        let sessionLength = this.state.sessionLength + 1;
+        let minutes = this.state.isSession ? sessionLength : this.state.breakLength;
         this.setState({
-            sessionLength: this.state.sessionLength + 1,
-            seconds: 0
+            sessionLength: sessionLength,
+            seconds: 0,
+            minutes: minutes
         });
     }
 
