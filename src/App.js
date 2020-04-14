@@ -36,38 +36,42 @@ class App extends React.Component {
     }
 
     handleBreakDecrement(event) {
-        if (this.state.breakLength === 1) {
+        if (this.state.timerHasBeenStarted || this.state.breakLength === 1) {
             return;
         }
         this.setState({
-            breakLength: this.state.breakLength - 1
+            breakLength: this.state.breakLength - 1,
+            seconds: 0
         });
     }
 
     handleBreakIncrement(event) {
-        if (this.state.breakLength === 60) {
+        if (this.state.timerHasBeenStarted || this.state.breakLength === 60) {
             return;
         }
         this.setState({
-            breakLength: this.state.breakLength + 1
+            breakLength: this.state.breakLength + 1,
+            seconds: 0
         });
     }
 
     handleSessionDecrement(event) {
-        if (this.state.sessionLength === 1) {
+        if (this.state.timerHasBeenStarted || this.state.sessionLength === 1) {
             return;
         }
         this.setState({
-            sessionLength: this.state.sessionLength - 1
+            sessionLength: this.state.sessionLength - 1,
+            seconds: 0
         });
     }
 
     handleSessionIncrement(event) {
-        if (this.state.sessionLength === 60) {
+        if (this.state.timerHasBeenStarted || this.state.sessionLength === 60) {
             return;
         }
         this.setState({
-            sessionLength: this.state.sessionLength + 1
+            sessionLength: this.state.sessionLength + 1,
+            seconds: 0
         });
     }
 
